@@ -37,7 +37,7 @@ export default function Profile() {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        'http://localhost:5000/api/users/profile',
+        'https://react-nodejs-ecommerce.onrender.com/api/users/profile',
         {
           name,
           email,
