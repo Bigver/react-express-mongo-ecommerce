@@ -1,0 +1,80 @@
+.cart-container{
+    margin-top: 5%;
+    display: grid;
+    margin-left: 5%;
+    h1{
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+    img{
+        width: 25vh;
+        height: 30vh;
+    }
+    button{
+        width: 50px;
+        height: 50px;
+    }
+    .cart{
+        @media only screen and (max-width: 550px) {
+            display: grid;
+            justify-content: center;
+            text-align: center;
+            padding-top: 10px;
+          }
+        button{
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border: 1px solid rgb(191, 191, 191);
+        }
+        border-bottom: 2px solid rgb(137, 135, 135);
+        display: flex;
+        position: relative;
+        align-items: center;
+        gap: 2rem;
+        .button{
+            @media only screen and (max-width: 550px){
+                padding-bottom: 20px;
+            }
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .btn-container{
+            @media only screen and (max-width: 800px) {
+                grid-template-columns: repeat(1 , 1fr);
+                
+            }
+            display: grid;
+            grid-template-columns: repeat(2 , 1fr);
+            gap: 2rem;
+            .text{
+                text-decoration: none;
+                color: black;
+                font-size: 0.5rem;
+            }
+        }
+    }
+}
+
+.cart-{
+    margin-top: 5%;
+    margin-left: 5%;
+    border-bottom: 4px solid rgb(159, 81, 81);
+    width: 240px;
+    letter-spacing: 1px;
+}
+.Checkout{
+    margin-top: 5%;
+    position: relative;
+    display: grid;
+    justify-content: end;
+    right: 5%;
+    gap: 1rem;
+    button{
+        width: 200px;
+        background-color: black;
+        color: white;
+    }
+}
+

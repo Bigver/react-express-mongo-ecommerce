@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web:wght@300&display=swap');
+
+nav{
+  overflow: hidden;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+nav .logo{
+    color: rgb(3, 0, 0);
+    padding-left: 30%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+      width: 100%;
+      height: 20px;
+    }
+  }
+  nav{
+    height: 70px;
+    background: #ffffff;
+    box-shadow: 0 3px 15px rgba(0,0,0,.4);
+  }
+  nav ul{
+    float: right;
+  }
+  nav ul li{
+    display: inline-block;
+  }
+  nav ul li a{
+    text-decoration: none;
+    color: rgb(5, 1, 1);
+    display: block;
+    padding: 0 10px;
+    line-height: 70px;
+    background: #ffffff;
+    transition: .5s;
+  }
+  nav ul li a:hover,
+  nav ul li a.active{
+    color: #dd1717;
+    position: relative;
+  }
+  nav ul ul{
+    list-style: none;
+    text-decoration: none;
+    position: absolute;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  nav ul li:hover > ul{
+    top: 50px;
+    opacity: 1;
+    visibility: visible;
+  }
+  nav ul ul li{
+    margin-left: -25%;
+    width: 130px;
+    display: list-item;
+    position: relative;
+    border: 1px solid #050a0c;
+    border-top: none;
+    @media only screen and (max-width: 1200px) {
+      width: 78px;
+      @media only screen and (max-width: 500px) {
+        width: 65px;
+        font-size: 0.6rem;
+        font-weight: bold;
+      }
+    }
+  }
+  nav ul ul li a{
+    line-height: 50px;
+  }
+  nav ul ul ul{
+    border-top: none;
+  }
+  nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+  }
+  nav ul ul li a i{
+    margin-left: 45px;
+  }
+
+
+  
+  .ul-1{
+   margin-left: 8%;
+   z-index: 10;
+   @media only screen and (max-width: 800px) {
+    display: none;
+  }
+  }
+
+  .ul-2{
+    z-index: 10;
+    .span-num{
+      position: absolute;
+      bottom: 5px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: rgb(71, 65, 65);
+
+    }
+    margin-right: 5%;  
+    @media only screen and (max-width: 800px) {
+        margin-right: 8%;  
+    }
+  }
+
+
+
