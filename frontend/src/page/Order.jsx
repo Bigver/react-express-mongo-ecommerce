@@ -79,7 +79,7 @@ export default function Order() {
     const fetchOrder = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`http://localhost:5000/api/orders/${orderId}`, {
+        const { data } = await axios.get(`https://react-nodejs-ecommerce.onrender.com/api/orders/${orderId}`, {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         setImgPayment(data.imgPayment);
