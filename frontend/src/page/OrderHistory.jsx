@@ -6,6 +6,7 @@ import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import { publicRequest } from "../requestMethod";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -34,7 +35,7 @@ export default function OrderHistory() {
       dispatch({ type: 'FETCH_REQUEST' });
       try {
         const { data } = await axios.get(
-          `http://localhost:5000/api/orders/mine`,
+          `${publicRequest}/orders/mine`,
 
           { headers: { Authorization: `Bearer ${userInfo.token}` } }
         );

@@ -7,6 +7,7 @@ import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import { getError } from '../utils';
 import { Helmet } from 'react-helmet-async';
+import { publicRequest } from "../requestMethod";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -78,7 +79,7 @@ export default function ProductList() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/products/admin?page=${page} `, {
+        const { data } = await axios.get(`${publicRequest}/products/admin?page=${page} `, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
 
@@ -98,7 +99,7 @@ export default function ProductList() {
       try {
         dispatch({ type: 'CREATE_REQUEST' });
         const { data } = await axios.post(
-          'http://localhost:5000/api/products',
+          `${publicRequest}/products`,
           {},
           {
             headers: { Authorization: `Bearer ${userInfo.token}` },

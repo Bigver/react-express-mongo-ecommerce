@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Product from './Product';
+import { publicRequest } from "../requestMethod";
 
 
 
@@ -14,8 +15,8 @@ const ProductFilter = ({ cat, filters, sort }) => {
       try {
         const res = await axios.get(
           cat
-            ? `http://localhost:5000/api/products?category=${cat}`
-            : "http://localhost:5000/api/products"
+            ? `${publicRequest}/products?category=${cat}`
+            : `${publicRequest}/products`
         );
         setProducts(res.data);
       } catch (err) {}

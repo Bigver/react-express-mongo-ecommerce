@@ -33,21 +33,6 @@ const Home = () => {
     error: "",
   });
 
-  const [product, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: "FETCH_REQUEST" });
-      try {
-        const result = await axios.get("http://localhost:5000/api/products");
-        dispatch({ type: "FETCH_SUCCESS", payload: result.data });
-        setProducts(result.data);
-      } catch (err) {
-        dispatch({ type: "FETCH_FAIL", payload: err.message });
-      }
-    };
-    fetchData();
-  }, []);
   return (
     <div className='home-container'>
       <HomeList/>
@@ -55,13 +40,7 @@ const Home = () => {
         <div className="new-product">
           <h1><span>NEW</span> PRODUCT</h1>
         </div>
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
           <ProductFilter />
-        )}
       </div>   
     </div>
   )

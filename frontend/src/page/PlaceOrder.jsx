@@ -8,6 +8,10 @@ import { Store } from '../Store';
 import LoadingBox from '../component/LoadingBox';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { publicRequest } from "../requestMethod";
+
+
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'CREATE_REQUEST':
@@ -44,7 +48,7 @@ export default function PlaceOrderScreen() {
       dispatch({ type: 'CREATE_REQUEST' });
 
       const { data } = await Axios.post(
-        'http://localhost:5000/api/orders',
+        `${publicRequest}/orders`,
         {
           orderItems: cart.cartItems,
           shippingAddress: cart.shippingAddress,

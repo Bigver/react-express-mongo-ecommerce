@@ -7,6 +7,7 @@ import { getError } from '../utils';
 import { Helmet } from 'react-helmet-async';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
+import { publicRequest } from "../requestMethod";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -64,7 +65,7 @@ export default function ProductEdit() {
     const fetchData = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`http://localhost:5000/api/products/${productId}`);
+        const { data } = await axios.get(`${publicRequest}/products/${productId}`);
         setName(data.name);
         setSlug(data.slug);
         setPrice(data.price);

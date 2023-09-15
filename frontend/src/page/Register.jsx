@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
+import { publicRequest } from "../requestMethod";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function Register() {
       return;
     }
     try {
-      const { data } = await Axios.post('http://localhost:5000/api/users/signup', {
+      const { data } = await Axios.post(`${publicRequest}/users/signup`, {
         name,
         email,
         password,

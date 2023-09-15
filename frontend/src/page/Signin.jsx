@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import { Store } from '../Store';
 import { toast } from 'react-toastify';
 import { getError } from '../utils';
+import { publicRequest } from "../requestMethod";
 
 export default function Signin() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ export default function Signin() {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await Axios.post('http://localhost:5000/api/users/signin', {
+      const { data } = await Axios.post(`${publicRequest}/users/signin`, {
         email,
         password,
       });

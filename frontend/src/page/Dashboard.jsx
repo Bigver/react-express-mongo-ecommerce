@@ -5,6 +5,7 @@ import { Store } from '../Store';
 import { getError } from '../utils';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
+import { publicRequest } from "../requestMethod";
 
 
 const reducer = (state, action) => {
@@ -34,7 +35,7 @@ export default function Dashboard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get('http://localhost:5000/api/orders/summary', {
+        const { data } = await axios.get(`${publicRequest}/orders/summary`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         dispatch({ type: 'FETCH_SUCCESS', payload: data });

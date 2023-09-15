@@ -8,6 +8,7 @@ import MessageBox from '../component/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
 import { toast } from 'react-toastify';
+import { publicRequest } from "../requestMethod";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -79,7 +80,7 @@ export default function Order() {
     const fetchOrder = async () => {
       try {
         dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`http://localhost:5000/api/orders/${orderId}`, {
+        const { data } = await axios.get(`${publicRequest}/orders/${orderId}`, {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         setImgPayment(data.imgPayment);
@@ -124,7 +125,7 @@ export default function Order() {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(
-        `http://localhost:5000/api/orders/${orderId}`,
+        `${publicRequest}/orders/${orderId}`,
         {
           imgPayment,
           isPaid,

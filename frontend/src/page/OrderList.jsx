@@ -7,6 +7,7 @@ import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import { Store } from '../Store';
 import { getError } from '../utils';
+import { publicRequest } from "../requestMethod";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -72,7 +73,7 @@ export default function OrderList() {
     if (window.confirm('Are you sure to delete?')) {
       try {
         dispatch({ type: 'DELETE_REQUEST' });
-        await axios.delete(`http://localhost:5000/api/orders/${order._id}`, {
+        await axios.delete(`${publicRequest}/orders/${order._id}`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         toast.success('order deleted successfully');
