@@ -17,11 +17,15 @@ import ProductEdit from './page/ProductEdit.jsx';
 import Dashboard from './page/Dashboard.jsx';
 import Footer from './component/Footer.jsx';
 import Products from './page/Products.jsx';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import ForgetPassword from './page/ForgetPassword.jsx';
 
 function App() {
   return (
     <BrowserRouter>
     <div className="app">
+      <ToastContainer position="bottom-center" limit={1} />
       <header >
         <Navbar/>
       </header>
@@ -34,6 +38,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/signup" element={<Register />} />
             <Route path="/signin" element={<Signin />} />
+            <Route path="/forget-password" element={<ForgetPassword/>} />
             <Route path="/shipping" element={<Shipping />} />
             <Route path="/payment" element={<Payment />} />
             <Route path="/placeorder" element={<PlaceOrderScreen />} />

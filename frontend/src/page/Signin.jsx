@@ -15,7 +15,6 @@ export default function Signin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { userInfo } = state;
   const submitHandler = async (e) => {
@@ -69,7 +68,6 @@ export default function Signin() {
             </div>
             <div className="new-user">
               <h1> New customer?{' '}<Link to={`/signup?redirect=${redirect}`}>Create your account</Link><br/></h1>
-            <h1> Forget Password? <Link to={`/forget-password`}>Reset Password</Link></h1>
             </div>
           </form>
         </div>
@@ -77,3 +75,5 @@ export default function Signin() {
     </div>
   );
 }
+
+{/* <h1> Forget Password? <Link to={`/forget-password`}>Reset Password</Link></h1> */}

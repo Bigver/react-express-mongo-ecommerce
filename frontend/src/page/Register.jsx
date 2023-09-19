@@ -36,7 +36,7 @@ export default function Register() {
       localStorage.setItem('userInfo', JSON.stringify(data));
       navigate(redirect || '/');
     } catch (err) {
-      toast.error(getError(err));
+      toast.error("Email นี้มีการลงทะเบียนแล้ว");
     }
   };
 
