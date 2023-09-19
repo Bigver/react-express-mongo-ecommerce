@@ -84,7 +84,6 @@ export default function Order() {
           headers: { authorization: `Bearer ${userInfo.token}` },
         });
         setImgPayment(data.imgPayment);
-        setisPaid(data.isPaid);
         dispatch({ type: 'FETCH_SUCCESS', payload: data });
       } catch (err) {
         dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
@@ -152,7 +151,7 @@ export default function Order() {
     bodyFormData.append('file', file);
     try {
       dispatch({ type: 'UPLOAD_REQUEST' });
-      const { data } = await axios.post('http://localhost:5000/api/upload', bodyFormData, {
+      const { data } = await axios.post(`${publicRequest}/upload`, bodyFormData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           authorization: `Bearer ${userInfo.token}`,
@@ -258,7 +257,7 @@ export default function Order() {
             )}
             <div className="btn2">
               <button disabled={loadingUpdate} type="submit">
-                ส่งสลิป
+                สั่งซื้อ
               </button>
               {loadingUpdate && <LoadingBox></LoadingBox>}
             </div>

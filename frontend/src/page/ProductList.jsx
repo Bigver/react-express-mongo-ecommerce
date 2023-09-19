@@ -120,7 +120,7 @@ export default function ProductList() {
   const deleteHandler = async (product) => {
     if (window.confirm('Are you sure to delete?')) {
       try {
-        await axios.delete(`http://localhost:5000/api/products/${product._id}`, {
+        await axios.delete(`${publicRequest}/products/${product._id}`, {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         });
         toast.success('product deleted successfully');

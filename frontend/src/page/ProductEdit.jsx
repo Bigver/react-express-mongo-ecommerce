@@ -94,7 +94,7 @@ export default function ProductEdit() {
     try {
       dispatch({ type: 'UPDATE_REQUEST' });
       await axios.put(
-        `http://localhost:5000/api/products/${productId}`,
+        `${publicRequest}/products/${productId}`,
         {
           _id: productId,
           name,
@@ -127,7 +127,7 @@ export default function ProductEdit() {
     bodyFormData.append('file', file);
     try {
       dispatch({ type: 'UPLOAD_REQUEST' });
-      const { data } = await axios.post('http://localhost:5000/api/upload', bodyFormData, {
+      const { data } = await axios.post(`${publicRequest}/upload`, bodyFormData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           authorization: `Bearer ${userInfo.token}`,

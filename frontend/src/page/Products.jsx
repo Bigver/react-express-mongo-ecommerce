@@ -19,20 +19,7 @@ const Products = () => {
   return (
     <div className='products-ctn'>
         <div className='filter-ctn'>
-            <div class="filter">{
-            cat === "women-fashion" || cat === "clothes" 
-            ? 
-                <div class="select-job-items2" >
-                    <select  name="size" onChange={handleFilters}>
-                        <option>Size</option>
-                        <option>S</option>
-                        <option>L</option>
-                        <option>XL</option>
-                        <option>XXL</option>
-                    </select>
-                </div>
-            : <div></div>
-        }
+            <div class="filter">
         {cat != "shop"
         ?
         <div class="select-job-items2">
@@ -55,3 +42,18 @@ const Products = () => {
 }
 
 export default Products
+
+// {
+//     cat === "women-fashion" || cat === "clothes" 
+//     ? 
+//         <div class="select-job-items2" >
+//             <select  name="size" onChange={handleFilters}>
+//                 <option>Size</option>
+//                 <option>S</option>
+//                 <option>L</option>
+//                 <option>XL</option>
+//                 <option>XXL</option>
+//             </select>
+//         </div>
+//     : <div></div>
+// }

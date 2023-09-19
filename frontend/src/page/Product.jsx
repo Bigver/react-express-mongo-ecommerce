@@ -93,7 +93,7 @@ const Product = () => {
 
 
   return (
-    <div className='container-products'>
+    <div className='container-products' data-aos="zoom-in" data-aos-duration="1000">
       <div className="product-detail-container">
         <div className="product">
           <div className='img-pd'>

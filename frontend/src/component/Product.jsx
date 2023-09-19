@@ -5,9 +5,13 @@ import { Link } from 'react-router-dom';
 
 const Product = ({item}) => {
   return (
-    <div className='product-container'>
+    <div className='product-container' data-aos="fade-left" data-aos-duration="2500">
       <Link to={`/product/${item.slug}`}  className='text'>
         <div className='product'>
+            {
+              item.countInStock < 6 &&          
+              (<div className='stock'><h1>{item.countInStock} in stock</h1></div>)
+            }
             <div className='img-ctn'>
               <img src={item.images[0]}  alt={item.name} className='img1'/>
               <div className='img2-ctn'>

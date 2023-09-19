@@ -40,37 +40,39 @@ export default function Signin() {
   }, [navigate, redirect, userInfo]);
 
   return (
-    <div className="user">
-      <Helmet>
-        <title>Sign In</title>
-      </Helmet>
-      <h1 className="my-3">Sign In</h1>
-      <div className='form-ctn'>
-        <form onSubmit={submitHandler} className='container-form'>
-          <div className="input" controlId="email">
-            <label>Email</label>
-            <input
-              type="email"
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="input" controlId="password">
-            <label>Password</label>
-            <input
-              type="password"
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="input-btn">
-            <button type="submit">Sign In</button>
-          </div>
-          <div className="new-user">
-            <h1> New customer?{' '}<Link to={`/signup?redirect=${redirect}`}>Create your account</Link><br/></h1>
-           <h1> Forget Password? <Link to={`/forget-password`}>Reset Password</Link></h1>
-          </div>
-        </form>
+    <div className='user-container'>
+      <div className="user">
+        <Helmet>
+          <title>Sign In</title>
+        </Helmet>
+        <h1 className="my-3">Sign In</h1>
+        <div className='form-ctn'>
+          <form onSubmit={submitHandler} className='container-form'>
+            <div className="input" controlId="email">
+              <label>Email</label>
+              <input
+                type="email"
+                required
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="input" controlId="password">
+              <label>Password</label>
+              <input
+                type="password"
+                required
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div className="input-btn">
+              <button type="submit">Sign In</button>
+            </div>
+            <div className="new-user">
+              <h1> New customer?{' '}<Link to={`/signup?redirect=${redirect}`}>Create your account</Link><br/></h1>
+            <h1> Forget Password? <Link to={`/forget-password`}>Reset Password</Link></h1>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );

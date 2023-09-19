@@ -53,7 +53,6 @@ const Navbar = () => {
                 <li>
                   <a href="#"><FontAwesomeIcon icon={faUser} size='l' /><i class="fas fa-caret-down"></i></a>
                   <ul>
-                    <li><a href="/profile">Profile</a></li>
                     <li><a href="/order-history">order</a></li>
                     <li><a onClick={signoutHandler}>sigout</a></li>
                   </ul>
@@ -61,7 +60,7 @@ const Navbar = () => {
                 : <li><a href="/signin"><FontAwesomeIcon icon={faUser}  size='l' /></a></li>
                 }
                 {userInfo && userInfo.isAdmin && (
-                  <li>
+                  <li className='admin-icon'>
                     <a href="#"><FontAwesomeIcon icon={faWrench} />
                       <i class="fas fa-caret-down"></i>
                     </a>

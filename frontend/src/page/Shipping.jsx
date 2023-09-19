@@ -55,7 +55,7 @@ export default function Shipping() {
   }, [ctxDispatch, fullBox]);
 
   return (
-    <div>
+    <div className='container-shipping1'>
       <Helmet>
         <title>Shipping Address</title>
       </Helmet>
@@ -111,24 +111,7 @@ export default function Shipping() {
               required
             />
           </div>
-          <div className="input-btn">
-            <button
-              id="chooseOnMap"
-              type="button"
-              variant="light"
-              onClick={() => navigate('/map')}
-            >
-              Choose Location On Map
-            </button>
-            {shippingAddress.location && shippingAddress.location.lat ? (
-              <div>
-                LAT: {shippingAddress.location.lat}
-                LNG:{shippingAddress.location.lng}
-              </div>
-            ) : (
-              <div></div>
-            )}
-          </div>
+
 
           <div className="input-btn2">
             <button variant="primary" type="submit">

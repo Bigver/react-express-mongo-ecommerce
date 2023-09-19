@@ -3,6 +3,7 @@
     text-align: center;
     justify-content: center;
     gap: 2rem;
+    min-height: 60vh;
 }
 
 .place-ctn{
@@ -101,6 +102,7 @@
     display: grid;
     justify-content: center;
     align-items: center;
+    min-height: 60vh;
 }
 .order-ctn{
     font-size: 1rem;
@@ -171,4 +173,8 @@
         margin-left: 2%;
         display: grid;
     }
+}
+
+.container-shipping1{
+    min-height: 60vh;
 }

@@ -51,18 +51,7 @@ export default function Payment() {
               checked={paymentMethodName === 'Bank'}
               onChange={(e) => setPaymentMethod(e.target.value)}
             />
-            <text>ชำระผ่านธนาคาร</text>
-          </div>
-          <div className="mb-3">
-            <input
-              type="radio"
-              id="Stripe"
-              label="Stripe"
-              value="Stripe"
-              checked={paymentMethodName === 'Stripe'}
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            <text>ชำระผ่านบัตรเครดิต</text>
+            <text>โอนชำระผ่านธนาคาร</text>
           </div>
           <div className="input-btn2">
             <button type="submit">Continue</button>

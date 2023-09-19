@@ -37,7 +37,7 @@ export default function CartScreen() {
   };
 
   return (
-    <div>
+    <div className='cart-ctn'>
       <Helmet>
         <title>Shopping Cart</title>
       </Helmet>
@@ -45,9 +45,11 @@ export default function CartScreen() {
         <h1 className='cart-'>SHOPPING CART</h1>
         <div>
           {cartItems.length === 0 ? (
-            <MessageBox>
-              Cart is empty. <Link to="/">Go Shopping</Link>
-            </MessageBox>
+            <div  className="messagebox"> 
+              <MessageBox>
+                Cart is empty. <Link to="/">Go Shopping</Link>
+              </MessageBox>
+            </div>
           ) : (
             <div className='cart-container'>
               {cartItems.map((item) => (

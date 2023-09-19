@@ -6,6 +6,8 @@ import { getError } from '../utils';
 import LoadingBox from '../component/LoadingBox';
 import MessageBox from '../component/MessageBox';
 import { publicRequest } from "../requestMethod";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser , faClipboard} from '@fortawesome/free-solid-svg-icons'
 
 
 const reducer = (state, action) => {
@@ -50,46 +52,44 @@ export default function Dashboard() {
   }, [userInfo]);
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className='dashboard-ctn'>
+      <h1>DASHBOARD</h1>
       {loading ? (
         <LoadingBox />
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <>
-          <div>
-            <div>
-              <div>
+        <div className='dashboard'>
+          <div className='box-container'>
+            <div className='box'>
+              <div className='box-user'>
                 <div>
-                  <text>{summary.users[0].numUsers} Users</text>
+                  <h3><FontAwesomeIcon icon={faUser} style={{color: "#ffffff",}} /> {summary.users[0].numUsers} USERS </h3>
                 </div>
               </div>
             </div>
-            <div>
-              <div>
+            <div className='box'>
+              <div className='box-oder'>
                 <div>
-                    {summary.orders && summary.users[0]
+                  <h3>  <FontAwesomeIcon icon={faClipboard} style={{color: "#ffffff",}} />  {summary.orders && summary.users[0]
                       ? summary.orders[0].numOrders
-                      : 0}
-                  <text> Orders</text>
+                      : 0} Orders</h3>
                 </div>
               </div>
             </div>
-            <div>
-              <div>
+            <div className='box'>
+              <div className='box-price'>
                 <div>
-                    $
+                  <h3>                
                     {summary.orders && summary.users[0]
                       ? summary.orders[0].totalSales.toFixed(2)
-                      : 0}
-                  <text> Orders</text>
+                      : 0} &#3647;</h3> 
                 </div>
               </div>
             </div>
           </div>
-          <div className="my-3">
-            <h2>Sales</h2>
+          <div className="sale">
+            <h1>SALES</h1>
             {summary.dailyOrders.length === 0 ? (
               <MessageBox>No Sale</MessageBox>
             ) : (
@@ -105,8 +105,8 @@ export default function Dashboard() {
               ></Chart>
             )}
           </div>
-          <div className="my-3">
-            <h2>Categories</h2>
+          <div className="categories">
+            <h1>CATAGORIES</h1>
             {summary.productCategories.length === 0 ? (
               <MessageBox>No Category</MessageBox>
             ) : (
@@ -122,7 +122,7 @@ export default function Dashboard() {
               ></Chart>
             )}
           </div>
-        </>
+        </div>
       )}
     </div>
   );
